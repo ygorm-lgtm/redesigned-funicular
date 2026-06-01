@@ -1,0 +1,15 @@
+<h1>Gerador de link de wpp</h1>
+<input type="text" placeholder="Digite o número de telefone" id="numero">
+<textarea placeholder="Digite a mensagem" id="mensagem"></textarea>
+<button onclick="gerarLink()">Gerar Link</button>
+<a id="link" target="_blank" style="display: none;">Abrir no WhatsApp</a>
+
+    <script>
+        function gerarLink() {
+            const numero = document.getElementById('numero').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const link = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+            document.getElementById('link').href = link;
+            document.getElementById('link').style.display = 'block';
+        }
+    </script>
